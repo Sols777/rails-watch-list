@@ -4,8 +4,8 @@
 <div class="container">
   <ul class="list-group">
     <% @list.bookmarks.each do |bookmark| %>
-      <li class="list-group-item">title: <%= bookmark.movie.title %></li>
-      <li class="list-group-item">overview: <%= bookmark.movie.overview %></li>
+      <li class="list-group-item">Title: <%= bookmark.movie.title %></li>
+      <li class="list-group-item">Overview: <%= bookmark.movie.overview %></li>
       <li class="list-group-item"><%= image_tag (bookmark.movie.poster_url) ,class: "w-25" %></li>
       <li class="list-group-item">Rating: <%= bookmark.movie.rating %>⭐</li>
       <%= link_to "Delete bookmark", bookmark_path(bookmark),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} , class:"btn btn-danger"  %>

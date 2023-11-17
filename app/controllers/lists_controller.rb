@@ -18,7 +18,8 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to list_path(@list)
     else
-      render :new, status: :unprocessable_entity
+      @lists = List.all
+      render "lists/index", status: :unprocessable_entity
     end
   end
 
@@ -29,7 +30,7 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name,:photo)
   end
 
   def set_list

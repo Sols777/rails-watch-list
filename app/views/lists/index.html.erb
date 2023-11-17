@@ -1,42 +1,31 @@
-<div>
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
     <div class="container">
       <h1>My<strong> movies </strong>list!</h1>
       <p>Your movies all in one place.</p>
     </div>
-  </div>
+</div>
   <br>
 <div class="container">
-  <div class="row cards content demo">
+  <div class="row">
     <% @lists.each do |list| %>
-       <div class="card-category card-hghlght demo-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>')">
-          <li><%= link_to list.name , list_path(list) %></li>
-        </div>
-    <% end %>
-    <div class="card-category card-hghlght demo-card">
-      <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Add a new list
-      </button>
-    </div>
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Adding a list</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <%= render "form" %>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-              </div>
-            </div>
+      <div class="col">
+        <div class="card-category card-hghlght demo-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cloudinary_pic(list) %>')">
+            <li><%= link_to list.name , list_path(list) %></li>
           </div>
         </div>
+    <% end %>
+    <div class="col">
+      <div class="card-category card-hghlght demo-card">
+        <button type="button" class="btn btn-flat" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Add a new list
+        </button>
       </div>
-      <br>
     </div>
+  </div>
 </div>
+<br>
+
+
+
+
+<%= render "modal" %>
