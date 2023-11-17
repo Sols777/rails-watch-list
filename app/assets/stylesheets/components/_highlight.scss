@@ -1,7 +1,7 @@
 .demo {
-  height: 100vh;
+  height: 1000px;
   width: 1200px;
-  margin: 0 auto;
+  margin: 80px auto 0 auto;
 }
 
 .demo-card{
@@ -15,7 +15,7 @@
 /* ===== MAIN CODE ===== */
 .content {
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: space-evenly;
   pointer-events: none;
   transition: all 0.4s;
