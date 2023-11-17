@@ -26,11 +26,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-  background-color: $gray;
 }
 
 #new-card {
-  background: linear-gradient(132deg, rgba(2,0,36,1) 0%, rgb(21, 26, 121) 0%, rgb(64, 160, 229) 100%);
+  background: linear-gradient(132deg, rgba(2,0,36,1) 0%, rgb(21, 26, 121) 0%, rgb(20, 16, 51) 100%);
 }
 
 // Smallest device

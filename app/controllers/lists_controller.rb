@@ -22,6 +22,10 @@ class ListsController < ApplicationController
     end
   end
 
+  def article_params
+    params.require(:article).permit(:title, :body, :photo)
+  end
+
   private
 
   def list_params
